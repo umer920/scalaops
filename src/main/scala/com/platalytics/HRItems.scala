@@ -16,7 +16,7 @@ class HRItems {
      val sc = new SparkContext(conf);  
 
     var line = null
-    var vectors = sc.textFile("Returned.txt").map(line => {
+    var vectors = sc.textFile("umer/scalaops/project/target/Returned.txt").map(line => {
       println(line)
       val parts = line.split(",")
       (parts(3).toInt, parts(4).toInt)
