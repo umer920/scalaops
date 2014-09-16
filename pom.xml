@@ -70,11 +70,10 @@
 		<testSourceDirectory>src/test/scala</testSourceDirectory>
 		<plugins>
 			<plugin>
-				<!-- see http://davidb.github.com/scala-maven-plugin -->
-				<groupId>net.alchim31.maven</groupId>
-				<artifactId>scala-maven-plugin</artifactId>
-				<version>3.1.3</version>
-								<configuration>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.2.1</version>
+				<configuration>
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
 					</descriptorRefs>
@@ -87,19 +86,14 @@
 					</archive>
 
 				</configuration>
+
 				<executions>
 					<execution>
+						<id>assemble-all</id>
+						<phase>package</phase>
 						<goals>
-							<goal>compile</goal>
-							<goal>testCompile</goal>
+							<goal>single</goal>
 						</goals>
-						<configuration>
-							<args>
-								<arg>-make:transitive</arg>
-								<arg>-dependencyfile</arg>
-								<arg>${project.build.directory}/.scala_dependencies</arg>
-							</args>
-						</configuration>
 					</execution>
 				</executions>
 			</plugin>
