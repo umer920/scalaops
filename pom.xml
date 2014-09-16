@@ -74,6 +74,19 @@
 				<groupId>net.alchim31.maven</groupId>
 				<artifactId>scala-maven-plugin</artifactId>
 				<version>3.1.3</version>
+								<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+
+
+					<archive>
+						<manifest>
+							<mainClass>kgroup.kartifact.Driver</mainClass>
+						</manifest>
+					</archive>
+
+				</configuration>
 				<executions>
 					<execution>
 						<goals>
