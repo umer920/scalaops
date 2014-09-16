@@ -7,8 +7,8 @@ object App {
   
   
   def main(args : Array[String]) {
-    var temp = new HRItems()
-    temp.HihghestReturnedItems(args);
+//    var temp = new HRItems()
+//    temp.HihghestReturnedItems(args)
   }
 
 }
