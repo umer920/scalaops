@@ -1,4 +1,4 @@
-package TestScala.SacalaOps
+package com.platalytics
 
 /**
  * @author ${user.name}
