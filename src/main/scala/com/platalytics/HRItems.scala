@@ -25,6 +25,8 @@ class HRItems {
      var reduced  = vectors.reduceByKey((a, b) => a + b)
      
      reduced.foreach(f=>println(f._1 + " , "+f._2))
+     var result = reduced.collect.toSeq.sortBy(_._2)
+     result.foreach(f=>println(f._1 + " , "+f._2))
      
      
   }
