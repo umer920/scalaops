@@ -6,9 +6,9 @@ import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext._
 
 
-class HRItems {
+class HPItems {
   
-  def HihghestReturnedItems(args : Array[String]) {
+  def HihghestPurchasedItems(args : Array[String]) {
 	 
      val conf = new SparkConf().setAppName("Data Processor");
      //conf.set("spark.serializer","org.apache.spark.serializer.KryoSerializer");
@@ -16,7 +16,7 @@ class HRItems {
      val sc = new SparkContext(conf);  
 
     var line = null
-    var vectors = sc.textFile("Purchases.csv").map(line => {
+    var vectors = sc.textFile("Returns.csv").map(line => {
       println(line)
       val parts = line.split(",")
       (parts(3).toInt, parts(4).toInt)
@@ -24,8 +24,10 @@ class HRItems {
      
      var reduced  = vectors.reduceByKey((a, b) => a + b)
      var result = reduced.collect.toSeq.sortBy(_._2)
-     result = result.reverse
      result.foreach(f=>println(f._1 + " , "+f._2))
+     result = result.reverse
+     
      
   }
+
 }
