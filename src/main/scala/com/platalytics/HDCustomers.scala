@@ -38,7 +38,7 @@ class HDCustomers {
      var ratio = result.map(f => (f._1 , f._2._2 / f._2._1))
      var fresult = ratio.collect.toSeq.sortBy(_._2)
      fresult.foreach(f=>println(f._1 + " , "+f._2))
-     
+     sc.stop
      
      
   }
