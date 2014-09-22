@@ -24,8 +24,8 @@ class HPItems {
      
      var reduced  = vectors.reduceByKey((a, b) => a + b)
      var result = reduced.collect.toSeq.sortBy(_._2)
-     result.foreach(f=>println(f._1 + " , "+f._2))
      result = result.reverse
+     result.foreach(f=>println(f._1 + " , "+f._2))
      
      
   }
