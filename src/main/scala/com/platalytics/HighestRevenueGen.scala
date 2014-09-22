@@ -16,7 +16,7 @@ class HRGenerator {
      var price_table = sc.textFile("Items.csv").map(line => {
       println(line)
       val parts = line.split(",")
-      (parts(0).toInt, parts(3).toInt)
+      (parts(0).toInt, parts(3).toDouble)
      })
      
      var qty_table = sc.textFile("Purchases.csv").map(line => {
