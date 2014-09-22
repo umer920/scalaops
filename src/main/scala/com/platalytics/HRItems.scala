@@ -17,7 +17,6 @@ class HRItems {
 
     var line = null
     var vectors = sc.textFile("Purchases.csv").map(line => {
-      println(line)
       val parts = line.split(",")
       (parts(3).toInt, parts(4).toInt)
      })

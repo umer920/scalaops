@@ -14,13 +14,11 @@ class HRGenerator {
      val sc = new SparkContext(conf);  
 
      var price_table = sc.textFile("Items.csv").map(line => {
-      println(line)
       val parts = line.split(",")
       (parts(0).toInt, parts(3).toDouble)
      })
      
      var qty_table = sc.textFile("Purchases.csv").map(line => {
-      println(line)
       val parts = line.split(",")
       (parts(3).toInt, parts(4).toDouble)
      })
@@ -34,19 +32,6 @@ class HRGenerator {
      var result = revenue.collect.toSeq.sortBy(_._2)
      result = result.reverse
      result.foreach(f=>println(f._1 + " , "+f._2))
-     
-     
-//    var line = null
-//    var vectors = sc.textFile("Purchases.csv").map(line => {
-//      println(line)
-//      val parts = line.split(",")
-//      (parts(3).toInt, parts(4).toInt)
-//     })
-//     
-//     var reduced  = vectors.reduceByKey((a, b) => a + b)
-//     var result = reduced.collect.toSeq.sortBy(_._2)
-//     result = result.reverse
-//     result.foreach(f=>println(f._1 + " , "+f._2))
   }
   
 

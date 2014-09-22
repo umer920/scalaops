@@ -15,7 +15,6 @@ class HSCustomer {
      val sc = new SparkContext(conf);  
      
      var user_purchases = sc.textFile("Purchases.csv").map(line => {
-      println(line)
       val parts = line.split(",")
       (parts(1).toInt, (parts(4).toDouble, parts(5).toDouble))
      })

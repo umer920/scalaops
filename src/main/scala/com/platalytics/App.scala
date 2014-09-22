@@ -7,8 +7,8 @@ object App {
   
   
   def main(args : Array[String]) {
-    var temp = new HSCustomer()
-    temp.HighestSpendingCustomer(args)
+    var temp = new HDCustomers()
+    temp.HighestDissatisfiedCustomer(args)
   }
 
 }
