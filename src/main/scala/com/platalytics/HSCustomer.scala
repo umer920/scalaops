@@ -26,7 +26,8 @@ class HSCustomer {
      
      var res = result.collect.toSeq.sortBy(_._2)
      res = res.reverse
-     res.foreach(f=>println(f._1 + " , "+f._2))
+     println(res.head._1 + " , " + res.head._2)
+     //res.foreach(f=>println(f._1 + " , "+f._2))
      
      
      
