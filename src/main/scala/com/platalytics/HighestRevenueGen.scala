@@ -17,11 +17,13 @@ class HRGenerator {
       val parts = line.split(",")
       (parts(0).toInt, parts(3).toDouble)
      })
+     price_table = sc.parallelize(price_table.take(10))
      
      var qty_table = sc.textFile("Purchases.csv").map(line => {
       val parts = line.split(",")
       (parts(3).toInt, parts(4).toDouble)
      })
+     qty_table = sc.parallelize(qty_table.take(10))
      
      qty_table  = qty_table.reduceByKey((a, b) => a + b)
      

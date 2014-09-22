@@ -20,6 +20,7 @@ class HPItems {
       val parts = line.split(",")
       (parts(3).toInt, parts(4).toInt)
      })
+     vectors = sc.parallelize(vectors.take(10))
      
      var reduced  = vectors.reduceByKey((a, b) => a + b)
      var result = reduced.collect.toSeq.sortBy(_._2)

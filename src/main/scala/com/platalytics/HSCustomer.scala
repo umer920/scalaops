@@ -18,6 +18,7 @@ class HSCustomer {
       val parts = line.split(",")
       (parts(1).toInt, (parts(4).toDouble, parts(5).toDouble))
      })
+      user_purchases = sc.parallelize(user_purchases.take(10))
      
      var user_expenditure = user_purchases.map(f => (f._1 , f._2._1 * f._2._2))
      var result = user_expenditure.reduceByKey((a, b) => a + b)

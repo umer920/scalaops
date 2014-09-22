@@ -17,12 +17,13 @@ class HDCustomers {
       val parts = line.split(",")
       (parts(1).toInt, parts(4).toDouble)
      })
+     purchases = sc.parallelize(purchases.take(10))
      
      var returns= sc.textFile("Returns.csv").map(line => {
       val parts = line.split(",")
       (parts(1).toInt, parts(4).toDouble)
      })
-     
+     returns = sc.parallelize(returns.take(10))
      
      
      
