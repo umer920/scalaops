@@ -15,12 +15,12 @@ class HDCustomers {
      
      var purchases = sc.textFile("Purchases.csv").map(line => {
       val parts = line.split(",")
-      (parts(1).toInt, parts(4).toDouble)
+      (parts(1).toInt, parts(4).toInt)
      })
      
      var returns= sc.textFile("Returns.csv").map(line => {
       val parts = line.split(",")
-      (parts(1).toInt, parts(4).toDouble)
+      (parts(1).toInt, parts(4).toInt)
      })
      
      
