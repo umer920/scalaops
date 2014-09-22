@@ -31,7 +31,9 @@ class HRGenerator {
      
      highest_revenue.map(f => f._2._1 * f._2._2)
      
-     highest_revenue.foreach(f=>println(f._1 + " , "+f._2))
+     var result = highest_revenue.collect.toSeq.sortBy(_._2)
+     result = result.reverse
+     result.foreach(f=>println(f._1 + " , "+f._2))
      
      
 //    var line = null
